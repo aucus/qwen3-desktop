@@ -14,6 +14,13 @@ from .api.chat import router as chat_router
 from .api.files import router as files_router
 from .api.mcp import router as mcp_router
 from .api.health import router as health_router
+from .api.prompts import router as prompts_router
+from .api.context import router as context_router
+from .api.versions import router as versions_router
+from .api.plugins import router as plugins_router
+from .api.api_keys import router as api_keys_router
+from .api.settings import router as settings_router
+from .api.conversations import router as conversations_router
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
@@ -109,6 +116,13 @@ app.include_router(health_router, prefix="/api/health", tags=["health"])
 app.include_router(chat_router, prefix="/api/chat", tags=["chat"])
 app.include_router(files_router, prefix="/api/files", tags=["files"])
 app.include_router(mcp_router, prefix="/api/mcp", tags=["mcp"])
+app.include_router(prompts_router, prefix="/api/prompts", tags=["prompts"])
+app.include_router(context_router, prefix="/api/context", tags=["context"])
+app.include_router(versions_router, prefix="/api/versions", tags=["versions"])
+app.include_router(plugins_router, prefix="/api/plugins", tags=["plugins"])
+app.include_router(api_keys_router, prefix="/api/keys", tags=["api_keys"])
+app.include_router(settings_router, prefix="/api/settings", tags=["settings"])
+app.include_router(conversations_router, prefix="/api/conversations", tags=["conversations"])
 
 # WebSocket 엔드포인트
 @app.websocket("/ws/{client_id}")

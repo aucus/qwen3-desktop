@@ -1,0 +1,32 @@
+# Testing dependencies
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+pytest-xdist==3.3.1
+pytest-html==4.1.1
+pytest-json-report==1.5.0
+
+# Performance testing
+psutil==5.9.6
+memory-profiler==0.61.0
+
+# Mock and stubbing
+responses==0.24.1
+httpx==0.25.2
+
+# Code coverage
+coverage==7.3.2
+
+# Static analysis
+flake8==6.1.0
+black==23.11.0
+isort==5.12.0
+mypy==1.7.1
+
+# Security testing
+bandit==1.7.5
+safety==2.3.5
+
+# Documentation testing
+doctest-ignore-unicode==0.1.2

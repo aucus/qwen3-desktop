@@ -1,0 +1,538 @@
+.prompt-ui {
+  @apply w-full h-full flex flex-col;
+}
+
+/* 헤더 스타일 */
+.prompt-header {
+  @apply bg-white border-b border-gray-200 px-6 py-4;
+}
+
+.header-content {
+  @apply flex items-center justify-between;
+}
+
+.header-title {
+  @apply flex items-center gap-3;
+}
+
+.header-title h1 {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.header-actions {
+  @apply flex items-center gap-3;
+}
+
+/* 메인 컨텐츠 */
+.prompt-main {
+  @apply flex-1 overflow-hidden;
+}
+
+/* 탭 스타일 */
+.prompt-tabs {
+  @apply h-full flex flex-col;
+}
+
+.tabs-list {
+  @apply bg-white border-b border-gray-200 px-6;
+}
+
+.tab-trigger {
+  @apply flex items-center gap-2 px-4 py-3 text-sm font-medium;
+}
+
+.tab-trigger[data-state="active"] {
+  @apply text-blue-600 border-b-2 border-blue-600;
+}
+
+.tab-content {
+  @apply flex-1 overflow-hidden p-6;
+}
+
+/* 템플릿 섹션 */
+.templates-section {
+  @apply h-full flex flex-col;
+}
+
+/* 검색 및 필터 */
+.search-filters {
+  @apply flex items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg;
+}
+
+.search-box {
+  @apply flex items-center gap-2 flex-1 max-w-md;
+}
+
+.search-box input {
+  @apply flex-1;
+}
+
+.filters {
+  @apply flex items-center gap-3;
+}
+
+.view-toggle {
+  @apply flex items-center gap-1;
+}
+
+/* 템플릿 컨테이너 */
+.templates-container {
+  @apply flex-1 overflow-auto;
+}
+
+.templates-grid {
+  @apply grid gap-6;
+}
+
+.templates-grid.grid {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.templates-grid.list {
+  @apply grid-cols-1;
+}
+
+/* 템플릿 카드 */
+.template-card {
+  @apply hover:shadow-lg transition-all duration-200 border border-gray-200;
+}
+
+.template-card:hover {
+  @apply transform translate-y-[-2px];
+}
+
+.card-header {
+  @apply pb-3;
+}
+
+.card-title {
+  @apply flex items-start justify-between;
+}
+
+.title-content h3 {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.card-badges {
+  @apply flex items-center gap-2;
+}
+
+.card-actions {
+  @apply flex items-center gap-1;
+}
+
+.card-content {
+  @apply pt-0;
+}
+
+.description {
+  @apply text-sm text-gray-600 mb-4 line-clamp-2;
+}
+
+.template-meta {
+  @apply flex items-center gap-4 mb-3;
+}
+
+.meta-item {
+  @apply flex items-center gap-1 text-xs text-gray-500;
+}
+
+.template-tags {
+  @apply flex flex-wrap gap-1 mb-4;
+}
+
+.template-actions {
+  @apply flex items-center gap-2;
+}
+
+/* 로딩 상태 */
+.loading-state {
+  @apply flex flex-col items-center justify-center py-12;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4;
+}
+
+/* 빈 상태 */
+.empty-state {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-hidden;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200;
+}
+
+.modal-header h3 {
+  @apply text-lg font-semibold;
+}
+
+.modal-content {
+  @apply p-6 overflow-y-auto max-h-[60vh];
+}
+
+.modal-footer {
+  @apply flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50;
+}
+
+/* 빠른 액션 */
+.quick-action-content h4 {
+  @apply text-lg font-semibold mb-2;
+}
+
+.quick-action-content p {
+  @apply text-gray-600 mb-4;
+}
+
+.preview-section {
+  @apply space-y-2;
+}
+
+.preview-content {
+  @apply p-3 bg-gray-50 rounded border text-sm max-h-40 overflow-y-auto;
+}
+
+.variables-section {
+  @apply space-y-4;
+}
+
+.variable-input {
+  @apply space-y-2;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .prompt-header {
+    @apply px-4 py-3;
+  }
+  
+  .header-title h1 {
+    @apply text-xl;
+  }
+  
+  .search-filters {
+    @apply flex-col gap-3;
+  }
+  
+  .filters {
+    @apply flex-wrap gap-2;
+  }
+  
+  .templates-grid.grid {
+    @apply grid-cols-1;
+  }
+  
+  .template-actions {
+    @apply flex-col gap-1;
+  }
+  
+  .modal {
+    @apply mx-2 max-w-none;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .prompt-ui {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .prompt-header {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .header-title h1 {
+    @apply text-white;
+  }
+  
+  .tabs-list {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .tab-trigger[data-state="active"] {
+    @apply text-blue-400 border-blue-400;
+  }
+  
+  .search-filters {
+    @apply bg-gray-800;
+  }
+  
+  .template-card {
+    @apply border-gray-700 bg-gray-800;
+  }
+  
+  .template-card:hover {
+    @apply border-gray-600;
+  }
+  
+  .title-content h3 {
+    @apply text-white;
+  }
+  
+  .description {
+    @apply text-gray-300;
+  }
+  
+  .meta-item {
+    @apply text-gray-400;
+  }
+  
+  .modal {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .modal-header {
+    @apply border-gray-700;
+  }
+  
+  .modal-footer {
+    @apply border-gray-700 bg-gray-700;
+  }
+  
+  .preview-content {
+    @apply bg-gray-700 border-gray-600;
+  }
+}
+
+/* 애니메이션 */
+.template-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.template-card:hover {
+  @apply shadow-lg;
+}
+
+.modal {
+  @apply animate-in fade-in-0 zoom-in-95 duration-200;
+}
+
+.modal-overlay {
+  @apply animate-in fade-in-0 duration-200;
+}
+
+/* 스크롤바 스타일링 */
+.templates-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.templates-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.templates-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.modal-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* 포커스 스타일 */
+.template-card:focus-within {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+  @apply relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 pointer-events-none transition-opacity;
+}
+
+.tooltip:hover::after {
+  @apply opacity-100;
+}
+
+/* 카테고리 색상 */
+.category-general {
+  @apply bg-blue-100 text-blue-800 border-blue-200;
+}
+
+.category-code {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.category-writing {
+  @apply bg-purple-100 text-purple-800 border-purple-200;
+}
+
+.category-analysis {
+  @apply bg-orange-100 text-orange-800 border-orange-200;
+}
+
+.category-creative {
+  @apply bg-pink-100 text-pink-800 border-pink-200;
+}
+
+/* 즐겨찾기 애니메이션 */
+.favorite-star {
+  @apply transition-transform duration-200;
+}
+
+.favorite-star:hover {
+  @apply transform scale-110;
+}
+
+.favorite-star.filled {
+  @apply text-yellow-500;
+}
+
+/* 태그 스타일 */
+.tag-item {
+  @apply inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded;
+}
+
+.tag-item:hover {
+  @apply bg-blue-200;
+}
+
+/* 액션 버튼 */
+.action-button {
+  @apply p-2 rounded hover:bg-gray-100 transition-colors;
+}
+
+.action-button:hover {
+  @apply text-blue-600;
+}
+
+.action-button.danger:hover {
+  @apply text-red-600;
+}
+
+/* 상태 표시 */
+.status-indicator {
+  @apply inline-block w-2 h-2 rounded-full;
+}
+
+.status-active {
+  @apply bg-green-500;
+}
+
+.status-inactive {
+  @apply bg-gray-400;
+}
+
+.status-draft {
+  @apply bg-yellow-500;
+}
+
+/* 그리드/리스트 뷰 전환 */
+.view-toggle-button {
+  @apply p-2 rounded transition-colors;
+}
+
+.view-toggle-button.active {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.view-toggle-button:hover {
+  @apply bg-gray-100;
+}
+
+/* 검색 하이라이트 */
+.search-highlight {
+  @apply bg-yellow-200 text-yellow-900 px-1 rounded;
+}
+
+/* 로딩 스켈레톤 */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 bg-gray-200 rounded;
+}
+
+.skeleton-card {
+  @apply p-4 border border-gray-200 rounded-lg;
+}
+
+.skeleton-card .skeleton-text {
+  @apply mb-2;
+}
+
+.skeleton-card .skeleton-text:last-child {
+  @apply w-2/3;
+}
+
+/* 드래그 앤 드롭 */
+.draggable {
+  @apply cursor-move;
+}
+
+.dragging {
+  @apply opacity-50 transform rotate-2;
+}
+
+.drop-zone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center;
+}
+
+.drop-zone.active {
+  @apply border-blue-500 bg-blue-50;
+}
+
+/* 키보드 네비게이션 */
+.keyboard-focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 접근성 */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+  .template-card {
+    @apply border-2;
+  }
+  
+  .template-card:hover {
+    @apply border-blue-600;
+  }
+  
+  .action-button:hover {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+/* 감소된 모션 */
+@media (prefers-reduced-motion: reduce) {
+  .template-card {
+    @apply transition-none;
+  }
+  
+  .template-card:hover {
+    @apply transform-none;
+  }
+  
+  .modal {
+    @apply animate-none;
+  }
+  
+  .loading-spinner {
+    @apply animate-none;
+  }
+}

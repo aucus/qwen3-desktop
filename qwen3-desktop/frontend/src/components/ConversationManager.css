@@ -1,0 +1,432 @@
+.conversation-manager {
+  @apply w-full h-full;
+}
+
+/* 탭 스타일 */
+.conversation-tabs {
+  @apply h-full flex flex-col;
+}
+
+.tabs-list {
+  @apply bg-white border-b border-gray-200;
+}
+
+.tab-trigger {
+  @apply flex items-center gap-2 px-4 py-3 text-sm font-medium;
+}
+
+.tab-trigger[data-state="active"] {
+  @apply text-blue-600 border-b-2 border-blue-600;
+}
+
+.tab-content {
+  @apply flex-1 overflow-hidden p-6;
+}
+
+/* 대화 섹션 */
+.conversation-section {
+  @apply h-full flex flex-col;
+}
+
+/* 검색 및 필터 */
+.search-filters {
+  @apply flex items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg;
+}
+
+.search-box {
+  @apply flex items-center gap-2 flex-1 max-w-md;
+}
+
+.search-box input {
+  @apply flex-1;
+}
+
+.filter-controls {
+  @apply flex items-center gap-2;
+}
+
+/* 대화 컨테이너 */
+.conversations-container {
+  @apply flex-1 overflow-auto;
+}
+
+.conversations-list {
+  @apply space-y-4;
+}
+
+.conversations-list.grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+/* 대화 카드 */
+.conversation-card {
+  @apply hover:shadow-lg transition-all duration-200 border border-gray-200 cursor-pointer;
+}
+
+.conversation-card:hover {
+  @apply transform translate-y-[-1px];
+}
+
+.conversation-card.selected {
+  @apply border-blue-500 bg-blue-50;
+}
+
+.card-header {
+  @apply pb-3;
+}
+
+.conversation-title {
+  @apply flex items-start justify-between;
+}
+
+.title-content h3 {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.conversation-meta {
+  @apply flex items-center gap-4 text-sm text-gray-600 mb-2;
+}
+
+.status {
+  @apply flex items-center gap-1;
+}
+
+.date {
+  @apply flex items-center gap-1;
+}
+
+.conversation-tags {
+  @apply flex items-center gap-2 flex-wrap;
+}
+
+.conversation-actions {
+  @apply flex items-center gap-1;
+}
+
+/* 대화 상세 보기 */
+.conversation-detail {
+  @apply mt-6;
+}
+
+.messages-container {
+  @apply space-y-4 max-h-96 overflow-y-auto;
+}
+
+.message {
+  @apply p-4 border border-gray-200 rounded-lg;
+}
+
+.message.user {
+  @apply bg-blue-50 border-blue-200;
+}
+
+.message.assistant {
+  @apply bg-green-50 border-green-200;
+}
+
+.message.system {
+  @apply bg-gray-50 border-gray-200;
+}
+
+.message-header {
+  @apply flex items-center justify-between mb-2;
+}
+
+.message-role {
+  @apply flex items-center gap-2;
+}
+
+.role-label {
+  @apply text-sm font-medium;
+}
+
+.message-time {
+  @apply text-xs text-gray-500;
+}
+
+.message-content {
+  @apply text-sm;
+}
+
+/* 통계 섹션 */
+.statistics-section {
+  @apply h-full;
+}
+
+.stats-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.stat-item {
+  @apply flex items-center justify-between py-2;
+}
+
+.stat-label {
+  @apply text-sm text-gray-600;
+}
+
+.stat-value {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+/* 로딩 상태 */
+.loading-state {
+  @apply flex flex-col items-center justify-center py-12;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4;
+}
+
+/* 빈 상태 */
+.empty-state {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-hidden;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200;
+}
+
+.modal-header h3 {
+  @apply text-lg font-semibold;
+}
+
+.modal-content {
+  @apply p-6 overflow-y-auto max-h-[60vh];
+}
+
+.modal-footer {
+  @apply flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50;
+}
+
+/* 폼 그룹 */
+.form-group {
+  @apply space-y-2 mb-4;
+}
+
+.tags-input {
+  @apply space-y-2;
+}
+
+.export-options {
+  @apply space-y-2;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-filters {
+    @apply flex-col gap-3;
+  }
+  
+  .filter-controls {
+    @apply flex-wrap;
+  }
+  
+  .conversation-title {
+    @apply flex-col gap-3;
+  }
+  
+  .conversation-actions {
+    @apply justify-start;
+  }
+  
+  .modal {
+    @apply mx-2 max-w-none;
+  }
+  
+  .stats-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .conversation-manager {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .tabs-list {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .tab-trigger[data-state="active"] {
+    @apply text-blue-400 border-blue-400;
+  }
+  
+  .search-filters {
+    @apply bg-gray-800;
+  }
+  
+  .conversation-card {
+    @apply border-gray-700 bg-gray-800;
+  }
+  
+  .conversation-card:hover {
+    @apply border-gray-600;
+  }
+  
+  .conversation-card.selected {
+    @apply border-blue-400 bg-blue-900;
+  }
+  
+  .title-content h3 {
+    @apply text-white;
+  }
+  
+  .conversation-meta {
+    @apply text-gray-300;
+  }
+  
+  .modal {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .modal-header {
+    @apply border-gray-700;
+  }
+  
+  .modal-footer {
+    @apply border-gray-700 bg-gray-700;
+  }
+  
+  .message.user {
+    @apply bg-blue-900 border-blue-700;
+  }
+  
+  .message.assistant {
+    @apply bg-green-900 border-green-700;
+  }
+  
+  .message.system {
+    @apply bg-gray-700 border-gray-600;
+  }
+}
+
+/* 애니메이션 */
+.conversation-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.conversation-card:hover {
+  @apply shadow-lg;
+}
+
+.modal {
+  @apply animate-in fade-in-0 zoom-in-95 duration-200;
+}
+
+.modal-overlay {
+  @apply animate-in fade-in-0 duration-200;
+}
+
+/* 스크롤바 스타일링 */
+.conversations-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.conversations-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.conversations-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.messages-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.modal-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* 포커스 스타일 */
+.conversation-card:focus-within {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+  @apply relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 pointer-events-none transition-opacity;
+}
+
+.tooltip:hover::after {
+  @apply opacity-100;
+}
+
+/* 액션 버튼 */
+.action-button {
+  @apply p-2 rounded hover:bg-gray-100 transition-colors;
+}
+
+.action-button:hover {
+  @apply text-blue-600;
+}
+
+.action-button.danger:hover {
+  @apply text-red-600;
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+  .conversation-card {
+    @apply border-2;
+  }
+  
+  .conversation-card:hover {
+    @apply border-blue-600;
+  }
+  
+  .action-button:hover {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+/* 감소된 모션 */
+@media (prefers-reduced-motion: reduce) {
+  .conversation-card {
+    @apply transition-none;
+  }
+  
+  .conversation-card:hover {
+    @apply transform-none;
+  }
+  
+  .modal {
+    @apply animate-none;
+  }
+  
+  .loading-spinner {
+    @apply animate-none;
+  }
+}

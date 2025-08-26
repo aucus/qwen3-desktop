@@ -1,0 +1,534 @@
+.plugin-manager {
+  @apply w-full h-full;
+}
+
+/* 탭 스타일 */
+.plugin-tabs {
+  @apply h-full flex flex-col;
+}
+
+.tabs-list {
+  @apply bg-white border-b border-gray-200;
+}
+
+.tab-trigger {
+  @apply flex items-center gap-2 px-4 py-3 text-sm font-medium;
+}
+
+.tab-trigger[data-state="active"] {
+  @apply text-blue-600 border-b-2 border-blue-600;
+}
+
+.tab-content {
+  @apply flex-1 overflow-hidden p-6;
+}
+
+/* 플러그인 섹션 */
+.plugins-section,
+.marketplace-section {
+  @apply h-full flex flex-col;
+}
+
+/* 검색 및 필터 */
+.search-filters {
+  @apply flex items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg;
+}
+
+.search-box {
+  @apply flex items-center gap-2 flex-1 max-w-md;
+}
+
+.search-box input {
+  @apply flex-1;
+}
+
+/* 플러그인 컨테이너 */
+.plugins-container,
+.marketplace-container {
+  @apply flex-1 overflow-auto;
+}
+
+.plugins-grid,
+.marketplace-grid {
+  @apply grid gap-6;
+}
+
+.plugins-grid {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.marketplace-grid {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* 플러그인 카드 */
+.plugin-card,
+.marketplace-card {
+  @apply hover:shadow-lg transition-all duration-200 border border-gray-200;
+}
+
+.plugin-card:hover,
+.marketplace-card:hover {
+  @apply transform translate-y-[-2px];
+}
+
+.card-header {
+  @apply pb-3;
+}
+
+.card-title {
+  @apply flex items-start justify-between;
+}
+
+.title-content h3 {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.card-badges {
+  @apply flex items-center gap-2;
+}
+
+.card-actions {
+  @apply flex items-center gap-1;
+}
+
+.card-content {
+  @apply pt-0;
+}
+
+.description {
+  @apply text-sm text-gray-600 mb-4 line-clamp-2;
+}
+
+.plugin-meta {
+  @apply flex items-center gap-4 mb-3;
+}
+
+.meta-item {
+  @apply flex items-center gap-1 text-xs text-gray-500;
+}
+
+.plugin-tags {
+  @apply flex flex-wrap gap-1 mb-4;
+}
+
+.plugin-actions {
+  @apply flex items-center gap-2;
+}
+
+.error-message {
+  @apply flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-4;
+}
+
+.rating {
+  @apply flex items-center gap-1 text-sm;
+}
+
+/* 로딩 상태 */
+.loading-state {
+  @apply flex flex-col items-center justify-center py-12;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4;
+}
+
+/* 빈 상태 */
+.empty-state {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-hidden;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200;
+}
+
+.modal-header h3 {
+  @apply text-lg font-semibold;
+}
+
+.modal-content {
+  @apply p-6 overflow-y-auto max-h-[60vh];
+}
+
+.modal-footer {
+  @apply flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50;
+}
+
+/* 설정 섹션 */
+.config-section {
+  @apply space-y-4;
+}
+
+.config-fields {
+  @apply space-y-3;
+}
+
+.config-field {
+  @apply space-y-2;
+}
+
+/* 플러그인 타입 색상 */
+.plugin-type-mcp_server {
+  @apply bg-blue-100 text-blue-800 border-blue-200;
+}
+
+.plugin-type-ui_component {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.plugin-type-utility {
+  @apply bg-purple-100 text-purple-800 border-purple-200;
+}
+
+.plugin-type-theme {
+  @apply bg-pink-100 text-pink-800 border-pink-200;
+}
+
+.plugin-type-language {
+  @apply bg-orange-100 text-orange-800 border-orange-200;
+}
+
+/* 상태 표시 */
+.status-enabled {
+  @apply text-green-500;
+}
+
+.status-disabled {
+  @apply text-gray-500;
+}
+
+.status-error {
+  @apply text-red-500;
+}
+
+.status-updating {
+  @apply text-blue-500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-filters {
+    @apply flex-col gap-3;
+  }
+  
+  .plugins-grid,
+  .marketplace-grid {
+    @apply grid-cols-1;
+  }
+  
+  .plugin-actions {
+    @apply flex-col gap-1;
+  }
+  
+  .modal {
+    @apply mx-2 max-w-none;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .plugin-manager {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .tabs-list {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .tab-trigger[data-state="active"] {
+    @apply text-blue-400 border-blue-400;
+  }
+  
+  .search-filters {
+    @apply bg-gray-800;
+  }
+  
+  .plugin-card,
+  .marketplace-card {
+    @apply border-gray-700 bg-gray-800;
+  }
+  
+  .plugin-card:hover,
+  .marketplace-card:hover {
+    @apply border-gray-600;
+  }
+  
+  .title-content h3 {
+    @apply text-white;
+  }
+  
+  .description {
+    @apply text-gray-300;
+  }
+  
+  .meta-item {
+    @apply text-gray-400;
+  }
+  
+  .modal {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .modal-header {
+    @apply border-gray-700;
+  }
+  
+  .modal-footer {
+    @apply border-gray-700 bg-gray-700;
+  }
+  
+  .error-message {
+    @apply bg-red-900 border-red-700 text-red-300;
+  }
+}
+
+/* 애니메이션 */
+.plugin-card,
+.marketplace-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.plugin-card:hover,
+.marketplace-card:hover {
+  @apply shadow-lg;
+}
+
+.modal {
+  @apply animate-in fade-in-0 zoom-in-95 duration-200;
+}
+
+.modal-overlay {
+  @apply animate-in fade-in-0 duration-200;
+}
+
+/* 스크롤바 스타일링 */
+.plugins-container::-webkit-scrollbar,
+.marketplace-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.plugins-container::-webkit-scrollbar-track,
+.marketplace-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.plugins-container::-webkit-scrollbar-thumb,
+.marketplace-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.modal-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* 포커스 스타일 */
+.plugin-card:focus-within,
+.marketplace-card:focus-within {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+  @apply relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 pointer-events-none transition-opacity;
+}
+
+.tooltip:hover::after {
+  @apply opacity-100;
+}
+
+/* 액션 버튼 */
+.action-button {
+  @apply p-2 rounded hover:bg-gray-100 transition-colors;
+}
+
+.action-button:hover {
+  @apply text-blue-600;
+}
+
+.action-button.danger:hover {
+  @apply text-red-600;
+}
+
+/* 상태 인디케이터 */
+.status-indicator {
+  @apply inline-block w-2 h-2 rounded-full;
+}
+
+.status-enabled {
+  @apply bg-green-500;
+}
+
+.status-disabled {
+  @apply bg-gray-400;
+}
+
+.status-error {
+  @apply bg-red-500;
+}
+
+.status-updating {
+  @apply bg-blue-500;
+}
+
+/* 플러그인 아이콘 */
+.plugin-icon {
+  @apply w-8 h-8 rounded-lg flex items-center justify-center;
+}
+
+.plugin-icon.mcp_server {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.plugin-icon.ui_component {
+  @apply bg-green-100 text-green-600;
+}
+
+.plugin-icon.utility {
+  @apply bg-purple-100 text-purple-600;
+}
+
+.plugin-icon.theme {
+  @apply bg-pink-100 text-pink-600;
+}
+
+.plugin-icon.language {
+  @apply bg-orange-100 text-orange-600;
+}
+
+/* 마켓플레이스 특별 스타일 */
+.marketplace-card {
+  @apply relative;
+}
+
+.marketplace-card .card-badges {
+  @apply flex-wrap;
+}
+
+.marketplace-card .rating {
+  @apply ml-auto;
+}
+
+/* 설치 진행 상태 */
+.install-progress {
+  @apply w-full bg-gray-200 rounded-full h-2;
+}
+
+.install-progress-bar {
+  @apply bg-blue-600 h-2 rounded-full transition-all duration-300;
+}
+
+/* 의존성 표시 */
+.dependencies-list {
+  @apply text-xs text-gray-500;
+}
+
+.dependency-item {
+  @apply flex items-center gap-1;
+}
+
+.dependency-item.installed {
+  @apply text-green-600;
+}
+
+.dependency-item.missing {
+  @apply text-red-600;
+}
+
+/* 권한 표시 */
+.permissions-list {
+  @apply flex flex-wrap gap-1;
+}
+
+.permission-badge {
+  @apply text-xs px-2 py-1 rounded bg-yellow-100 text-yellow-800;
+}
+
+/* 버전 정보 */
+.version-info {
+  @apply text-xs text-gray-500;
+}
+
+.version-latest {
+  @apply text-green-600;
+}
+
+.version-outdated {
+  @apply text-yellow-600;
+}
+
+/* 플러그인 통계 */
+.plugin-stats {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4 mb-6;
+}
+
+.stat-card {
+  @apply p-4 bg-gray-50 rounded-lg text-center;
+}
+
+.stat-number {
+  @apply text-2xl font-bold text-blue-600;
+}
+
+.stat-label {
+  @apply text-sm text-gray-600;
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+  .plugin-card,
+  .marketplace-card {
+    @apply border-2;
+  }
+  
+  .plugin-card:hover,
+  .marketplace-card:hover {
+    @apply border-blue-600;
+  }
+  
+  .action-button:hover {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+/* 감소된 모션 */
+@media (prefers-reduced-motion: reduce) {
+  .plugin-card,
+  .marketplace-card {
+    @apply transition-none;
+  }
+  
+  .plugin-card:hover,
+  .marketplace-card:hover {
+    @apply transform-none;
+  }
+  
+  .modal {
+    @apply animate-none;
+  }
+  
+  .loading-spinner {
+    @apply animate-none;
+  }
+}

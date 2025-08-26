@@ -1,0 +1,392 @@
+.prompt-editor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.prompt-editor .card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.prompt-editor .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.prompt-editor .card-title {
+  color: white;
+  font-weight: 600;
+}
+
+.prompt-editor .card-content {
+  padding: 1.5rem;
+}
+
+.prompt-editor .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.prompt-editor .form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.prompt-editor .form-input,
+.prompt-editor .form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.prompt-editor .form-input:focus,
+.prompt-editor .form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.prompt-editor .form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.5;
+}
+
+.prompt-editor .variables-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.prompt-editor .variable-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.prompt-editor .variable-item:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-editor .variable-item:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-editor .tags-section {
+  margin-bottom: 1.5rem;
+}
+
+.prompt-editor .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.prompt-editor .tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: #e5e7eb;
+  color: #374151;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.prompt-editor .tag:hover {
+  background: #d1d5db;
+}
+
+.prompt-editor .tag-remove {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.15s ease-in-out;
+}
+
+.prompt-editor .tag-remove:hover {
+  color: #ef4444;
+}
+
+.prompt-editor .preview-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prompt-editor .preview-content {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.prompt-editor .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.prompt-editor .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.prompt-editor .btn-primary {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.prompt-editor .btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.prompt-editor .btn-secondary {
+  background: white;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.prompt-editor .btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.prompt-editor .btn-danger {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+.prompt-editor .btn-danger:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.prompt-editor .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.prompt-editor .switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.prompt-editor .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.prompt-editor .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 1.5rem;
+}
+
+.prompt-editor .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.25rem;
+  width: 1.25rem;
+  left: 0.125rem;
+  bottom: 0.125rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.prompt-editor input:checked + .slider {
+  background-color: #3b82f6;
+}
+
+.prompt-editor input:checked + .slider:before {
+  transform: translateX(1.5rem);
+}
+
+.prompt-editor .grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.prompt-editor .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.prompt-editor .grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.prompt-editor .grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .prompt-editor .grid-cols-2,
+  .prompt-editor .grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .prompt-editor .actions {
+    flex-direction: column;
+  }
+  
+  .prompt-editor .actions .btn {
+    width: 100%;
+  }
+}
+
+.prompt-editor .space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.prompt-editor .space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.prompt-editor .space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.prompt-editor .flex {
+  display: flex;
+}
+
+.prompt-editor .items-center {
+  align-items: center;
+}
+
+.prompt-editor .justify-between {
+  justify-content: space-between;
+}
+
+.prompt-editor .justify-end {
+  justify-content: flex-end;
+}
+
+.prompt-editor .gap-2 {
+  gap: 0.5rem;
+}
+
+.prompt-editor .gap-4 {
+  gap: 1rem;
+}
+
+.prompt-editor .mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.prompt-editor .mb-4 {
+  margin-bottom: 1rem;
+}
+
+.prompt-editor .mt-2 {
+  margin-top: 0.5rem;
+}
+
+.prompt-editor .mt-4 {
+  margin-top: 1rem;
+}
+
+.prompt-editor .p-3 {
+  padding: 0.75rem;
+}
+
+.prompt-editor .p-4 {
+  padding: 1rem;
+}
+
+.prompt-editor .border {
+  border: 1px solid #e5e7eb;
+}
+
+.prompt-editor .rounded {
+  border-radius: 0.375rem;
+}
+
+.prompt-editor .rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.prompt-editor .bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.prompt-editor .bg-white {
+  background-color: white;
+}
+
+.prompt-editor .text-sm {
+  font-size: 0.875rem;
+}
+
+.prompt-editor .text-xs {
+  font-size: 0.75rem;
+}
+
+.prompt-editor .font-medium {
+  font-weight: 500;
+}
+
+.prompt-editor .font-mono {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.prompt-editor .whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.prompt-editor .cursor-pointer {
+  cursor: pointer;
+}
+
+.prompt-editor .transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

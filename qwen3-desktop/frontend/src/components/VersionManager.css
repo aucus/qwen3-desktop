@@ -1,0 +1,361 @@
+.version-manager {
+  @apply w-full;
+}
+
+.version-item {
+  @apply p-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-colors;
+}
+
+.version-item:hover {
+  @apply bg-gray-50;
+}
+
+.version-item .badge {
+  @apply text-xs;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-hidden;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200;
+}
+
+.modal-header h3 {
+  @apply text-lg font-semibold;
+}
+
+.modal-content {
+  @apply p-6 overflow-y-auto max-h-[60vh];
+}
+
+.modal-footer {
+  @apply flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50;
+}
+
+/* 버전 타입별 색상 */
+.version-type-major {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.version-type-minor {
+  @apply bg-blue-100 text-blue-800 border-blue-200;
+}
+
+.version-type-patch {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.version-type-custom {
+  @apply bg-gray-100 text-gray-800 border-gray-200;
+}
+
+/* 버전 히스토리 타임라인 */
+.version-timeline {
+  @apply relative;
+}
+
+.version-timeline::before {
+  content: '';
+  @apply absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200;
+}
+
+.version-timeline-item {
+  @apply relative pl-12 pb-6;
+}
+
+.version-timeline-item::before {
+  content: '';
+  @apply absolute left-2 top-2 w-4 h-4 bg-white border-2 border-gray-300 rounded-full;
+}
+
+.version-timeline-item.stable::before {
+  @apply border-green-500 bg-green-100;
+}
+
+.version-timeline-item.merge::before {
+  @apply border-blue-500 bg-blue-100;
+}
+
+.version-timeline-item.rollback::before {
+  @apply border-red-500 bg-red-100;
+}
+
+/* 변경사항 표시 */
+.changes-list {
+  @apply space-y-1;
+}
+
+.change-item {
+  @apply flex items-center gap-2 text-xs;
+}
+
+.change-type-created {
+  @apply text-green-600;
+}
+
+.change-type-updated {
+  @apply text-blue-600;
+}
+
+.change-type-deleted {
+  @apply text-red-600;
+}
+
+.change-type-merged {
+  @apply text-purple-600;
+}
+
+.change-type-rollback {
+  @apply text-orange-600;
+}
+
+/* 버전 비교 결과 */
+.compare-result {
+  @apply p-4 bg-gray-50 rounded-lg border border-gray-200;
+}
+
+.diff-summary {
+  @apply text-sm text-gray-600 mt-2 p-2 bg-white rounded border;
+}
+
+.diff-stats {
+  @apply grid grid-cols-3 gap-4 text-center;
+}
+
+.diff-stat {
+  @apply p-2 rounded;
+}
+
+.diff-stat.added {
+  @apply bg-green-100 text-green-800;
+}
+
+.diff-stat.removed {
+  @apply bg-red-100 text-red-800;
+}
+
+.diff-stat.modified {
+  @apply bg-blue-100 text-blue-800;
+}
+
+/* 태그 스타일 */
+.tag-input {
+  @apply flex flex-wrap gap-2 p-2 border border-gray-300 rounded-md min-h-[40px];
+}
+
+.tag-item {
+  @apply inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded;
+}
+
+.tag-remove {
+  @apply cursor-pointer hover:text-blue-600;
+}
+
+/* 버전 액션 버튼 */
+.version-actions {
+  @apply flex items-center gap-1;
+}
+
+.version-action-btn {
+  @apply p-1 rounded hover:bg-gray-100 transition-colors;
+}
+
+.version-action-btn:hover {
+  @apply text-blue-600;
+}
+
+.version-action-btn.danger:hover {
+  @apply text-red-600;
+}
+
+/* 로딩 상태 */
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900;
+}
+
+/* 빈 상태 */
+.empty-state {
+  @apply text-center py-8 text-gray-500;
+}
+
+.empty-state-icon {
+  @apply w-12 h-12 mx-auto mb-2 opacity-50;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .modal {
+    @apply mx-2 max-w-none;
+  }
+  
+  .version-item {
+    @apply p-3;
+  }
+  
+  .version-actions {
+    @apply flex-col gap-1;
+  }
+  
+  .diff-stats {
+    @apply grid-cols-1 gap-2;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .version-manager {
+    @apply text-white;
+  }
+  
+  .version-item {
+    @apply border-gray-700 hover:border-gray-600 hover:bg-gray-800;
+  }
+  
+  .modal {
+    @apply bg-gray-900 border-gray-700;
+  }
+  
+  .modal-header {
+    @apply border-gray-700;
+  }
+  
+  .modal-footer {
+    @apply border-gray-700 bg-gray-800;
+  }
+  
+  .compare-result {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .diff-summary {
+    @apply bg-gray-700 border-gray-600;
+  }
+  
+  .tag-input {
+    @apply border-gray-600 bg-gray-800;
+  }
+  
+  .version-action-btn:hover {
+    @apply bg-gray-700;
+  }
+  
+  .loading-spinner {
+    @apply border-gray-400;
+  }
+}
+
+/* 애니메이션 */
+.version-item {
+  @apply transition-all duration-200;
+}
+
+.version-item:hover {
+  @apply transform translate-y-[-1px] shadow-md;
+}
+
+.modal {
+  @apply animate-in fade-in-0 zoom-in-95 duration-200;
+}
+
+.modal-overlay {
+  @apply animate-in fade-in-0 duration-200;
+}
+
+/* 스크롤바 스타일링 */
+.modal-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* 포커스 스타일 */
+.version-action-btn:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+  @apply relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 pointer-events-none transition-opacity;
+}
+
+.tooltip:hover::after {
+  @apply opacity-100;
+}
+
+/* 버전 번호 스타일 */
+.version-number {
+  @apply font-mono text-sm font-medium;
+}
+
+.version-number.latest {
+  @apply text-blue-600 font-bold;
+}
+
+.version-number.stable {
+  @apply text-green-600;
+}
+
+/* 메타데이터 표시 */
+.version-meta {
+  @apply flex items-center gap-4 text-xs text-gray-500;
+}
+
+.version-meta-item {
+  @apply flex items-center gap-1;
+}
+
+/* 변경사항 상세 */
+.changes-detail {
+  @apply mt-2 p-2 bg-gray-50 rounded text-xs;
+}
+
+.change-field {
+  @apply font-medium text-gray-700;
+}
+
+.change-description {
+  @apply text-gray-600;
+}
+
+/* 병합 충돌 표시 */
+.merge-conflict {
+  @apply p-2 bg-red-50 border border-red-200 rounded text-xs;
+}
+
+.conflict-field {
+  @apply font-medium text-red-700;
+}
+
+.conflict-values {
+  @apply mt-1 space-y-1;
+}
+
+.conflict-value {
+  @apply p-1 bg-white border rounded;
+}
+
+.conflict-value.source {
+  @apply border-green-300 bg-green-50;
+}
+
+.conflict-value.target {
+  @apply border-blue-300 bg-blue-50;
+}

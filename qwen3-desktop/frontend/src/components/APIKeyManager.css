@@ -1,0 +1,540 @@
+.api-key-manager {
+  @apply w-full h-full;
+}
+
+/* 탭 스타일 */
+.api-key-tabs {
+  @apply h-full flex flex-col;
+}
+
+.tabs-list {
+  @apply bg-white border-b border-gray-200;
+}
+
+.tab-trigger {
+  @apply flex items-center gap-2 px-4 py-3 text-sm font-medium;
+}
+
+.tab-trigger[data-state="active"] {
+  @apply text-blue-600 border-b-2 border-blue-600;
+}
+
+.tab-content {
+  @apply flex-1 overflow-hidden p-6;
+}
+
+/* API 키 섹션 */
+.keys-section,
+.usage-section {
+  @apply h-full flex flex-col;
+}
+
+/* 검색 및 필터 */
+.search-filters {
+  @apply flex items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg;
+}
+
+.search-box {
+  @apply flex items-center gap-2 flex-1 max-w-md;
+}
+
+.search-box input {
+  @apply flex-1;
+}
+
+/* API 키 컨테이너 */
+.keys-container {
+  @apply flex-1 overflow-auto;
+}
+
+.keys-grid {
+  @apply grid gap-6;
+}
+
+.keys-grid {
+  @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* API 키 카드 */
+.key-card {
+  @apply hover:shadow-lg transition-all duration-200 border border-gray-200;
+}
+
+.key-card:hover {
+  @apply transform translate-y-[-2px];
+}
+
+.card-header {
+  @apply pb-3;
+}
+
+.card-title {
+  @apply flex items-start justify-between;
+}
+
+.title-content h3 {
+  @apply text-lg font-semibold text-gray-900 mb-2;
+}
+
+.card-badges {
+  @apply flex items-center gap-2;
+}
+
+.card-actions {
+  @apply flex items-center gap-1;
+}
+
+.card-content {
+  @apply pt-0;
+}
+
+.description {
+  @apply text-sm text-gray-600 mb-4 line-clamp-2;
+}
+
+.key-meta {
+  @apply flex items-center gap-4 mb-3;
+}
+
+.meta-item {
+  @apply flex items-center gap-1 text-xs text-gray-500;
+}
+
+.key-permissions {
+  @apply flex flex-wrap gap-1 mb-4;
+}
+
+.key-tags {
+  @apply flex flex-wrap gap-1 mb-4;
+}
+
+.expiry-info {
+  @apply flex items-center gap-1 text-xs text-orange-600;
+}
+
+/* 사용량 통계 */
+.usage-stats {
+  @apply mb-6;
+}
+
+.stats-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.stat-item {
+  @apply text-center p-4 bg-gray-50 rounded-lg;
+}
+
+.stat-number {
+  @apply text-2xl font-bold text-blue-600;
+}
+
+.stat-label {
+  @apply text-sm text-gray-600;
+}
+
+/* 로딩 상태 */
+.loading-state {
+  @apply flex flex-col items-center justify-center py-12;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4;
+}
+
+/* 빈 상태 */
+.empty-state {
+  @apply flex flex-col items-center justify-center py-12 text-center;
+}
+
+/* 모달 스타일 */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal {
+  @apply bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-hidden;
+}
+
+.modal-header {
+  @apply flex items-center justify-between p-6 border-b border-gray-200;
+}
+
+.modal-header h3 {
+  @apply text-lg font-semibold;
+}
+
+.modal-content {
+  @apply p-6 overflow-y-auto max-h-[60vh];
+}
+
+.modal-footer {
+  @apply flex items-center justify-end gap-3 p-6 border-t border-gray-200 bg-gray-50;
+}
+
+/* 권한 그리드 */
+.permissions-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-3 max-h-40 overflow-y-auto;
+}
+
+.permission-item {
+  @apply flex items-start gap-2 p-2 border border-gray-200 rounded cursor-pointer hover:bg-gray-50;
+}
+
+.permission-item input[type="checkbox"] {
+  @apply mt-1;
+}
+
+.permission-item span:first-of-type {
+  @apply font-medium;
+}
+
+/* API 키 표시 */
+.api-key-display {
+  @apply flex items-center gap-2;
+}
+
+.api-key-display input {
+  @apply font-mono text-sm;
+}
+
+/* 사용 기록 */
+.usage-list {
+  @apply space-y-3 max-h-96 overflow-y-auto;
+}
+
+.usage-item {
+  @apply p-3 border border-gray-200 rounded;
+}
+
+.usage-header {
+  @apply flex items-center gap-2 mb-2;
+}
+
+.usage-method {
+  @apply px-2 py-1 bg-blue-100 text-blue-800 text-xs font-mono rounded;
+}
+
+.usage-endpoint {
+  @apply flex-1 text-sm font-mono;
+}
+
+.usage-status {
+  @apply px-2 py-1 text-xs rounded;
+}
+
+.usage-status.success {
+  @apply bg-green-100 text-green-800;
+}
+
+.usage-status.error {
+  @apply bg-red-100 text-red-800;
+}
+
+.usage-details {
+  @apply flex items-center gap-4 text-xs text-gray-500;
+}
+
+/* 알림 스타일 */
+.alert {
+  @apply flex items-center gap-2 p-3 rounded;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 border border-yellow-200 text-yellow-800;
+}
+
+/* 상태 색상 */
+.status-active {
+  @apply text-green-500;
+}
+
+.status-inactive {
+  @apply text-gray-500;
+}
+
+.status-expired {
+  @apply text-orange-500;
+}
+
+.status-revoked {
+  @apply text-red-500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-filters {
+    @apply flex-col gap-3;
+  }
+  
+  .keys-grid {
+    @apply grid-cols-1;
+  }
+  
+  .card-actions {
+    @apply flex-col gap-1;
+  }
+  
+  .modal {
+    @apply mx-2 max-w-none;
+  }
+  
+  .permissions-grid {
+    @apply grid-cols-1;
+  }
+  
+  .stats-grid {
+    @apply grid-cols-2;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .api-key-manager {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .tabs-list {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .tab-trigger[data-state="active"] {
+    @apply text-blue-400 border-blue-400;
+  }
+  
+  .search-filters {
+    @apply bg-gray-800;
+  }
+  
+  .key-card {
+    @apply border-gray-700 bg-gray-800;
+  }
+  
+  .key-card:hover {
+    @apply border-gray-600;
+  }
+  
+  .title-content h3 {
+    @apply text-white;
+  }
+  
+  .description {
+    @apply text-gray-300;
+  }
+  
+  .meta-item {
+    @apply text-gray-400;
+  }
+  
+  .modal {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .modal-header {
+    @apply border-gray-700;
+  }
+  
+  .modal-footer {
+    @apply border-gray-700 bg-gray-700;
+  }
+  
+  .permission-item {
+    @apply border-gray-600 hover:bg-gray-700;
+  }
+  
+  .usage-item {
+    @apply border-gray-600;
+  }
+  
+  .alert-warning {
+    @apply bg-yellow-900 border-yellow-700 text-yellow-300;
+  }
+  
+  .stat-item {
+    @apply bg-gray-700;
+  }
+}
+
+/* 애니메이션 */
+.key-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.key-card:hover {
+  @apply shadow-lg;
+}
+
+.modal {
+  @apply animate-in fade-in-0 zoom-in-95 duration-200;
+}
+
+.modal-overlay {
+  @apply animate-in fade-in-0 duration-200;
+}
+
+/* 스크롤바 스타일링 */
+.keys-container::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.keys-container::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.keys-container::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.modal-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+.usage-list::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.usage-list::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.usage-list::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* 포커스 스타일 */
+.key-card:focus-within {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* 툴팁 스타일 */
+.tooltip {
+  @apply relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 pointer-events-none transition-opacity;
+}
+
+.tooltip:hover::after {
+  @apply opacity-100;
+}
+
+/* 액션 버튼 */
+.action-button {
+  @apply p-2 rounded hover:bg-gray-100 transition-colors;
+}
+
+.action-button:hover {
+  @apply text-blue-600;
+}
+
+.action-button.danger:hover {
+  @apply text-red-600;
+}
+
+/* 상태 인디케이터 */
+.status-indicator {
+  @apply inline-block w-2 h-2 rounded-full;
+}
+
+.status-active {
+  @apply bg-green-500;
+}
+
+.status-inactive {
+  @apply bg-gray-400;
+}
+
+.status-expired {
+  @apply bg-orange-500;
+}
+
+.status-revoked {
+  @apply bg-red-500;
+}
+
+/* 권한 배지 */
+.permission-badge {
+  @apply text-xs px-2 py-1 rounded;
+}
+
+.permission-badge.read {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.permission-badge.write {
+  @apply bg-green-100 text-green-800;
+}
+
+.permission-badge.admin {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.permission-badge.plugin {
+  @apply bg-orange-100 text-orange-800;
+}
+
+.permission-badge.file_access {
+  @apply bg-pink-100 text-pink-800;
+}
+
+.permission-badge.mcp_access {
+  @apply bg-indigo-100 text-indigo-800;
+}
+
+/* 만료 경고 */
+.expiry-warning {
+  @apply text-red-600 font-medium;
+}
+
+.expiry-soon {
+  @apply text-orange-600;
+}
+
+/* 사용량 차트 */
+.usage-chart {
+  @apply w-full h-64;
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+  .key-card {
+    @apply border-2;
+  }
+  
+  .key-card:hover {
+    @apply border-blue-600;
+  }
+  
+  .action-button:hover {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+/* 감소된 모션 */
+@media (prefers-reduced-motion: reduce) {
+  .key-card {
+    @apply transition-none;
+  }
+  
+  .key-card:hover {
+    @apply transform-none;
+  }
+  
+  .modal {
+    @apply animate-none;
+  }
+  
+  .loading-spinner {
+    @apply animate-none;
+  }
+}
