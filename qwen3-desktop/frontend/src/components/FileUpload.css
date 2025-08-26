@@ -1,0 +1,292 @@
+.file-upload {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 드래그 앤 드롭 영역 */
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  background: var(--background-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropzone:hover {
+  border-color: var(--primary-color);
+  background: var(--background-hover);
+}
+
+.dropzone.active {
+  border-color: var(--primary-color);
+  background: var(--primary-color-light);
+  transform: scale(1.02);
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.dropzone.active .upload-icon {
+  color: var(--primary-color);
+}
+
+.upload-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.upload-hint {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.select-files-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.select-files-btn:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-1px);
+}
+
+.select-files-btn:active {
+  transform: translateY(0);
+}
+
+/* 업로드 진행률 */
+.upload-progress {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--background-secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.upload-progress h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  background: var(--background-primary);
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-item.completed {
+  border-color: var(--success-color);
+  background: var(--success-color-light);
+}
+
+.progress-item.error {
+  border-color: var(--error-color);
+  background: var(--error-color-light);
+}
+
+.progress-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filename {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.progress-item.completed .status {
+  color: var(--success-color);
+}
+
+.progress-item.error .status {
+  color: var(--error-color);
+}
+
+/* 진행률 바 */
+.progress-bar {
+  width: 100px;
+  height: 6px;
+  background: var(--background-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color-light));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 완료 아이콘 */
+.progress-complete {
+  color: var(--success-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* 에러 상태 */
+.progress-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--error-color);
+  font-size: 0.8rem;
+}
+
+.error-message {
+  max-width: 200px;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+/* 제거 버튼 */
+.remove-progress {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.remove-progress:hover {
+  background: var(--background-hover);
+  color: var(--error-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .dropzone {
+    padding: 1.5rem;
+  }
+  
+  .upload-text {
+    font-size: 1rem;
+  }
+  
+  .upload-hint {
+    font-size: 0.8rem;
+  }
+  
+  .progress-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .progress-bar {
+    width: 100%;
+  }
+  
+  .progress-error {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .error-message {
+    max-width: none;
+  }
+}
+
+/* 다크 테마 대응 */
+@media (prefers-color-scheme: dark) {
+  .dropzone {
+    background: var(--background-secondary);
+  }
+  
+  .dropzone.active {
+    background: rgba(var(--primary-color-rgb), 0.1);
+  }
+  
+  .progress-item {
+    background: var(--background-primary);
+  }
+  
+  .progress-item.completed {
+    background: rgba(var(--success-color-rgb), 0.1);
+  }
+  
+  .progress-item.error {
+    background: rgba(var(--error-color-rgb), 0.1);
+  }
+}

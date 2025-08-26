@@ -1,0 +1,71 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+.theme-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.theme-label {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* 컴팩트 모드 */
+.theme-toggle.compact {
+  padding: 6px 8px;
+  gap: 4px;
+}
+
+.theme-toggle.compact .theme-label {
+  display: none;
+}
+
+/* 아이콘만 모드 */
+.theme-toggle.icon-only {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+}
+
+.theme-toggle.icon-only .theme-label {
+  display: none;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .theme-toggle .theme-label {
+    display: none;
+  }
+  
+  .theme-toggle {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    justify-content: center;
+  }
+}

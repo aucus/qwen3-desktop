@@ -1,0 +1,56 @@
+# FastAPI 및 웹 서버
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# CORS 및 미들웨어
+fastapi-cors==0.0.6
+
+# 환경 변수 관리
+python-dotenv==1.0.0
+
+# 로깅
+loguru==0.7.2
+
+# 데이터 검증
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# 비동기 처리
+asyncio-mqtt==0.16.1
+aiofiles==23.2.1
+
+# 웹소켓
+websockets==12.0
+
+# HTTP 클라이언트
+httpx==0.25.2
+aiohttp==3.9.1
+
+# JSON 처리
+orjson==3.9.10
+
+# 암호화
+cryptography==41.0.8
+
+# 파일 처리
+python-magic==0.4.27
+Pillow==10.1.0
+
+# 데이터베이스 (선택사항)
+sqlalchemy==2.0.23
+alembic==1.13.1
+
+# 테스트
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# 개발 도구
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# MCP 관련
+mcp==1.0.0

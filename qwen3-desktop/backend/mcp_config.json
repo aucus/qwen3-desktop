@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "description": "Qwen 3 Desktop Assistant MCP Configuration",
+  "servers": [
+    {
+      "name": "filesystem",
+      "description": "File system operations",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-filesystem"],
+      "capabilities": [
+        "filesystem/read",
+        "filesystem/write",
+        "filesystem/list",
+        "filesystem/search"
+      ],
+      "enabled": true
+    },
+    {
+      "name": "web-search",
+      "description": "Web search capabilities",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-web-search"],
+      "capabilities": [
+        "web/search",
+        "web/browse"
+      ],
+      "enabled": true,
+      "config": {
+        "search_engine": "google",
+        "api_key": "${WEB_SEARCH_API_KEY}"
+      }
+    },
+    {
+      "name": "terminal",
+      "description": "Terminal command execution",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-terminal"],
+      "capabilities": [
+        "terminal/execute",
+        "terminal/list"
+      ],
+      "enabled": true,
+      "config": {
+        "allowed_commands": ["ls", "cat", "grep", "find", "pwd"],
+        "working_directory": "${HOME}"
+      }
+    },
+    {
+      "name": "database",
+      "description": "Database operations",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-database"],
+      "capabilities": [
+        "database/query",
+        "database/execute",
+        "database/list"
+      ],
+      "enabled": false,
+      "config": {
+        "connection_string": "${DATABASE_URL}",
+        "allowed_operations": ["SELECT", "INSERT", "UPDATE", "DELETE"]
+      }
+    },
+    {
+      "name": "github",
+      "description": "GitHub integration",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-github"],
+      "capabilities": [
+        "github/repos",
+        "github/issues",
+        "github/pull_requests",
+        "github/contents"
+      ],
+      "enabled": false,
+      "config": {
+        "api_token": "${GITHUB_TOKEN}",
+        "default_owner": "${GITHUB_USERNAME}"
+      }
+    },
+    {
+      "name": "weather",
+      "description": "Weather information",
+      "version": "1.0.0",
+      "type": "stdio",
+      "command": ["mcp-server-weather"],
+      "capabilities": [
+        "weather/current",
+        "weather/forecast"
+      ],
+      "enabled": false,
+      "config": {
+        "api_key": "${WEATHER_API_KEY}",
+        "default_location": "Seoul, KR"
+      }
+    }
+  ],
+  "global_config": {
+    "timeout": 30000,
+    "max_retries": 3,
+    "log_level": "info",
+    "auto_reconnect": true,
+    "connection_pool_size": 5
+  }
+}
